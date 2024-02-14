@@ -27,7 +27,10 @@ class AppLogic :ViewModel(){
                 "B"
             } else if (it == 93) {
                 "C"
-            } else {
+            }
+            else if (it == 49) {
+            "."
+        }else {
                 it.toChar().toString()
             }
         }.joinToString("")

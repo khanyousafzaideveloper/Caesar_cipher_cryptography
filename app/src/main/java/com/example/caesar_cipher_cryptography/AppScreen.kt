@@ -4,8 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Paint.Align
 import android.text.Layout.Alignment
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -36,7 +39,7 @@ import androidx.core.content.ContextCompat.startActivity
 fun Cipher(viewModel: AppLogic = androidx.lifecycle.viewmodel.compose.viewModel()){
     val context = LocalContext.current
     Column( modifier = Modifier
-        .fillMaxSize()
+
         .padding(12.dp)) {
         Text(text = "Enter Text here to decode:", fontWeight = FontWeight(500) )
         TextField(
@@ -49,13 +52,14 @@ fun Cipher(viewModel: AppLogic = androidx.lifecycle.viewmodel.compose.viewModel(
                 .fillMaxWidth()
                 .padding(top = 8.dp, bottom = 8.dp),
             )
-        Spacer(modifier = Modifier.padding(30.dp))
-        Card(modifier = Modifier.fillMaxSize()){
+        Spacer(modifier = Modifier.padding(20.dp))
+        Card(modifier = Modifier.fillMaxWidth()){
             Text(text = "Your cipher text: ", Modifier.padding(12.dp) , fontWeight = FontWeight(700))
-            Text(text=viewModel.convert())
-            Button(onClick = { shareContent(context, viewModel.convert()) }) {
-               Icon(imageVector =  Icons.Filled.Share, contentDescription = null)
-                Modifier.align
+            Text(text=viewModel.convert(), Modifier.padding(12.dp))
+            Row (modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End){
+                Button(onClick = { shareContent(context, viewModel.convert()) }, Modifier.padding(12.dp)) {
+                    Icon(imageVector = Icons.Filled.Share, contentDescription = null)
+                }
             }
         }
 
