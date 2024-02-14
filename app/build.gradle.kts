@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.caesar_cipher_cryptography"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.caesar_cipher_cryptography"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+
     implementation(libs.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
