@@ -10,7 +10,7 @@ class AppLogic :ViewModel(){
     var notCipher by mutableStateOf("")
 
 
-    fun convert() : String {
+    fun encryptText() : String {
         val ascii = notCipher.map { it.code + 3 }
         return ascii.map {
             if (it == 35) {
@@ -31,6 +31,32 @@ class AppLogic :ViewModel(){
             else if (it == 49) {
             "."
         }else {
+                it.toChar().toString()
+            }
+        }.joinToString("")
+    }
+
+    fun decryptText() : String {
+        val ascii2 = notCipher.map { it.code - 3 }
+        return ascii2.map {
+            if (it == 35) {
+                " "
+            } else if (it == 62) {
+                "Z"
+            } else if (it == 63) {
+                "Y"
+            } else if (it == 64) {
+                "X"
+            } else if (it == 94) {
+                "z"
+            } else if (it == 95) {
+                "y"
+            } else if (it == 96) {
+                "x"
+            }
+            else if (it == 43) {
+                "."
+            }else {
                 it.toChar().toString()
             }
         }.joinToString("")
