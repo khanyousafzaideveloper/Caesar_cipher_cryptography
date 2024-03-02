@@ -59,7 +59,9 @@ fun Cipher(viewModel: AppLogic = androidx.lifecycle.viewmodel.compose.viewModel(
                 Modifier.padding(end = 12.dp),
                 colors = SwitchDefaults.colors(
                     checkedThumbColor = Color.Black,
-                    uncheckedThumbColor = Color.Green
+                    checkedTrackColor = Color.LightGray,
+                    uncheckedThumbColor = Color.Blue,
+                    uncheckedTrackColor = Color.LightGray,
                 )
 
             )

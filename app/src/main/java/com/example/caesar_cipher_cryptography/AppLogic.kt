@@ -42,19 +42,19 @@ class AppLogic :ViewModel(){
             if (it == 35) {
                 " "
             } else if (it == 62) {
-                "Z"
+                "X"
             } else if (it == 63) {
                 "Y"
             } else if (it == 64) {
-                "X"
+                "Z"
             } else if (it == 94) {
-                "z"
+                "x"
             } else if (it == 95) {
                 "y"
             } else if (it == 96) {
-                "x"
+                "z"
             }
-            else if (it == 43) {
+            else if (it == 49) {
                 "."
             }else {
                 it.toChar().toString()
